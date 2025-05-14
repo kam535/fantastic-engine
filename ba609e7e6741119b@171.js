@@ -1,10 +1,3 @@
-function _1(md){return(
-md`<div style="color: grey; font: 13px/25.5px var(--sans-serif); text-transform: uppercase;"><h1 style="display: none;">Disjoint force-directed graph</h1><a href="https://d3js.org/">D3</a> › <a href="/@d3/gallery">Gallery</a></div>
-
-# Disjoint force-directed graph
-
-When using [D3’s force layout](https://d3js.org/d3-force) with a disjoint graph, you typically want the [positioning forces](https://d3js.org/d3-force/position) (d3.forceX and d3.forceY) instead of the [centering force](https://d3js.org/d3-force/center) (d3.forceCenter). The positioning forces, unlike the centering force, prevent detached subgraphs from escaping the viewport.`
-)}
 
 function _chart(d3,data,invalidation)
 {
