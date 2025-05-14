@@ -100,16 +100,3 @@ function _chart(d3,data,invalidation)
 function _data(FileAttachment){return(
 FileAttachment("graph.json").json()
 )}
-
-export default function define(runtime, observer) {
-  const main = runtime.module();
-  function toString() { return this.url; }
-  const fileAttachments = new Map([
-    ["graph.json", {url: new URL("./graph.json", import.meta.url), mimeType: "application/json", toString}]
-  ]);
-  main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
-  main.variable(observer()).define(["md"], _1);
-  main.variable(observer("chart")).define("chart", ["d3","data","invalidation"], _chart);
-  main.variable(observer("data")).define("data", ["FileAttachment"], _data);
-  return main;
-}
